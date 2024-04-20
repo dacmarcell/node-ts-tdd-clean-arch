@@ -4,7 +4,8 @@
     "module": "CommonJS",
     "target": "ES2019", // Versão de conversão pro do ts pro js
     "esModuleInterop": true, // Caso usar import/export em modules que não suportam, ele converte ao commonjs
-    "allowJs": true //Inclui arquivos .js ao dist
+    "allowJs": true, //Inclui arquivos .js ao dist
+    "strictNullChecks": true
   },
   "include": ["src/**/*"]
 }
