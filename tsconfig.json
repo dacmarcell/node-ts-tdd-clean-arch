@@ -7,5 +7,4 @@
     "allowJs": true, //Inclui arquivos .js ao dist
     "strictNullChecks": true
   },
-  "include": ["src/**/*"]
 }
