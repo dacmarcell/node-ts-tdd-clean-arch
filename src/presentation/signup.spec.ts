@@ -158,10 +158,10 @@ describe('SignUp Controller', () => {
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
   })
-  test('Should return 500 if addAccount throws', async () => {
+  test('Should return 500 if AddAccount throws', async () => {
     const { addAccountStub, sut } = makeSut()
-    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() => {
-      throw new Error()
+    jest.spyOn(addAccountStub, 'add').mockImplementationOnce(async () => {
+      return await new Promise((_resolve, reject) => { reject(new Error()) })
     })
     const httpRequest = {
       body: {
