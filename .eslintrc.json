@@ -1,3 +1,6 @@
 {
-  "extends": "love"
+  "extends": "love",
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions":"off"
+  }
 }
