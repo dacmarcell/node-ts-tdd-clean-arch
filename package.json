@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --watch",
-    "test:staged": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "pnpm t -- --watch -c ./jest.unit.config.ts",
+    "test:integration":"pnpm t -- --watch -c ./jest.integration.config.ts",
+    "test:staged": "pnpm t",
+    "test:ci":"pnpm t -- --coverage",
     "prepare": "husky"
   },
   "keywords": [],
@@ -24,3 +28,4 @@
     "ts-node": "^10.9.2"
   }
 }
+
