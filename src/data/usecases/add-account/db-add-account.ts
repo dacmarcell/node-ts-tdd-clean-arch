@@ -1,6 +1,4 @@
-import type { AccountModel } from '../../../domains/models/account'
-import type { AddAccount, AddAccountModel } from '../../../domains/usecases/add-account'
-import type { Encrypter } from '../../protocols/encrypter'
+import type { AccountModel, AddAccount, AddAccountModel, Encrypter } from './db-add-account-protocols'
 
 export class DbAddAccount implements AddAccount {
   private readonly encrypter: Encrypter
@@ -11,6 +9,7 @@ export class DbAddAccount implements AddAccount {
 
   async add (account: AddAccountModel): Promise<AccountModel> {
     await this.encrypter.encrypt(account.password)
-    return await new Promise(resolve => { resolve(null) })
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    return await new Promise(resolve => resolve(null))
   }
 }
